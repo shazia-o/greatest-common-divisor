@@ -1,0 +1,27 @@
+public class GreatestCommonDivisor {
+//This program returns the greatest common divisor of two numbers.
+    
+    public static int getGreatestCommonDivisor (int first, int second) {
+
+//Validation check.
+        if (first < 10 || second < 10) {
+            return -1;
+        } 
+        
+        int gcd = 1;
+
+//ternary operator to assign value to 'min' variable.
+        int min = (first < second) ? first : second; 
+
+//initialize to 1 do avoid /0 error. For loop checks if both numbers can be divided without a remainder.
+        for (int i = 1; i <= min; i++) {  
+            
+            if (first % i == 0 && second % i == 0) {
+                gcd = i;
+            } 
+            
+        } return gcd;
+        
+    } 
+    
+}
